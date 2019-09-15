@@ -99,7 +99,7 @@ def print_female_data():
 	# female-class
 	print_entropy_data(Female_class_yrate, total_females, "female-class")	
 
-# print_root_data()
+print_root_data()
 print_male_data()
 print_female_data()
 
