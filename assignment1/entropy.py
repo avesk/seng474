@@ -18,6 +18,10 @@ Sex_yrate = {
 	"Female": {"rate": 344/470, "total": 470}
 }
 
+total_passengers = 2202
+total_males = 1731
+total_females = 470
+
 def get_attribute_entropy(entropies, total_records, yrates):
 	entropy = 0
 	for ent in entropies:
@@ -35,12 +39,14 @@ def get_value_entropies(yrate):
 
 pclass_entropies = get_value_entropies(pclass_yrate)
 print(plass_entropies)
-print( "total class entropy", get_attribute_entropy(plass_entropies, 2201, pclass_yrate) )
+print( "total class entropy", get_attribute_entropy(plass_entropies, total_passengers, pclass_yrate) )
 
 age_entropies = get_value_entropies(Age_yrate)
 print(Age_yrate)
-print( "total age entropy", get_attribute_entropy(age_entropies, 2201, Age_yrate) )
+print( "total age entropy", get_attribute_entropy(age_entropies, total_passengers, Age_yrate) )
 
 sex_entropies = get_value_entropies(Sex_yrate)
 print(sex_entropies)
-print( "total sex entropy", get_attribute_entropy(sex_entropies, 2201, Sex_yrate) )
+print( "total sex entropy", get_attribute_entropy(sex_entropies, total_passengers, Sex_yrate) )
+
+## male
