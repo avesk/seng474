@@ -18,6 +18,11 @@ Sex_yrate = {
 	"Female": {"rate": 344/470, "total": 470}
 }
 
+Male_age_rate = {
+	"Adult": {"rate": 338/1667, "total": 1667},
+	"Child": {"rate": 29/64, "total": 64}
+}
+
 total_passengers = 2202
 total_males = 1731
 total_females = 470
