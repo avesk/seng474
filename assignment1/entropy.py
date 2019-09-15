@@ -23,6 +23,13 @@ Male_age_yrate = {
 	"child": {"rate": 29/64, "total": 64}
 }
 
+Male_class_yrate = {
+	"1st": {"rate": 62/180, "total": 180},
+	"2nd": {"rate": 25/179, "total": 179},
+	"3rd": {"rate": 88/510, "total": 510},
+	"crew": {"rate": 192/862, "total": 862}
+}
+
 total_passengers = 2202
 total_males = 1731
 total_females = 470
@@ -63,6 +70,10 @@ def print_root_data():
 def print_male_data():
 	# male-age
 	print_entropy_data(Male_age_yrate, total_males, "male-age")
+
+	# male-class
+	print_entropy_data(Male_class_yrate, total_males, "male-class")
+	
 
 # print_root_data()
 print_male_data()
