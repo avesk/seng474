@@ -30,6 +30,18 @@ Male_class_yrate = {
 	"crew": {"rate": 192/862, "total": 862}
 }
 
+Female_age_yrate = {
+	"adult": {"rate": 316/425, "total": 425},
+	"child": {"rate": 28/45, "total": 45}
+}
+
+Female_class_yrate = {
+	"1st": {"rate": 141/145, "total": 145},
+	"2nd": {"rate": 93/106, "total": 106},
+	"3rd": {"rate": 90/196, "total": 196},
+	"crew": {"rate": 20/23, "total": 23}
+}
+
 total_passengers = 2202
 total_males = 1731
 total_females = 470
@@ -77,10 +89,19 @@ def print_male_data():
 
 	# male-class
 	print_entropy_data(Male_class_yrate, total_males, "male-class")
-	
+
+def print_female_data():
+	print("### FEMALE DATA ###")
+
+	# female-age
+	print_entropy_data(Female_age_yrate, total_females, "female-age")
+
+	# female-class
+	print_entropy_data(Female_class_yrate, total_females, "female-class")	
 
 # print_root_data()
 print_male_data()
+print_female_data()
 
 
 
