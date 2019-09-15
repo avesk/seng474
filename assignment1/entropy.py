@@ -1,5 +1,23 @@
 import math
 
+pclass_yrate = {
+	"1st": {"rate": 203/325, "total": 325},
+	"2nd": {"rate": 118/285, "total": 285},
+	"3rd": {"rate": 178/706, "total": 706},
+	"crew": {"rate": 212/885, "total": 885}
+}
+
+Age_yrate = {
+	"Adult": {"rate": 654/2092, "total": 2092},
+	"Child": {"rate": 57/109, "total": 109},
+}
+
+
+Sex_yrate = {
+	"Male": {"rate": 367/1731, "total": 1731},
+	"Female": {"rate": 344/470, "total": 470}
+}
+
 def get_attribute_entropy(entropies, total_records, yrates):
 	entropy = 0
 	for ent in entropies:
@@ -15,34 +33,14 @@ def get_value_entropies(yrate):
 		entropies[value] = entropy(yrate[value]["rate"])
 	return entropies
 
-pclass_yrate = {
-	"1st": {"rate": 203/325, "total": 325},
-	"2nd": {"rate": 118/285, "total": 285}, 
-	"3rd": {"rate": 178/706, "total": 706},
-	"crew": {"rate": 212/885, "total": 885}
-}
+pclass_entropies = get_value_entropies(pclass_yrate)
+print(plass_entropies)
+print( "total class entropy", get_attribute_entropy(plass_entropies, 2201, pclass_yrate) )
 
-plass_entropies = {}
-for pclass in pclass_yrate:
-	plass_entropies[pclass] = entropy(pclass_yrate[pclass]["rate"])
-
-# print(plass_entropies)
-# print( "toal entropy", get_attribute_entropy(plass_entropies, 2201, pclass_yrate) )
-
-
-Age_yrate = {
-	"Adult": {"rate": 654/2092, "total": 2092},
-	"Child": {"rate": 57/109, "total": 109},
-}
-
-
-Sex_yrate = {
-	"Male": {"rate": 367/1731, "total": 1731},
-	"Female": {"rate": 344/470, "total": 470}
-}
+age_entropies = get_value_entropies(Age_yrate)
+print(Age_yrate)
+print( "total age entropy", get_attribute_entropy(age_entropies, 2201, Age_yrate) )
 
 sex_entropies = get_value_entropies(Sex_yrate)
 print(sex_entropies)
-print( "total entropy", get_attribute_entropy(sex_entropies, 2201, Sex_yrate) )
-
-
+print( "total sex entropy", get_attribute_entropy(sex_entropies, 2201, Sex_yrate) )
