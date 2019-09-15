@@ -18,9 +18,9 @@ Sex_yrate = {
 	"Female": {"rate": 344/470, "total": 470}
 }
 
-Male_age_rate = {
-	"Adult": {"rate": 338/1667, "total": 1667},
-	"Child": {"rate": 29/64, "total": 64}
+Male_age_yrate = {
+	"adult": {"rate": 338/1667, "total": 1667},
+	"child": {"rate": 29/64, "total": 64}
 }
 
 total_passengers = 2202
@@ -42,16 +42,35 @@ def get_value_entropies(yrate):
 		entropies[value] = entropy(yrate[value]["rate"])
 	return entropies
 
-pclass_entropies = get_value_entropies(pclass_yrate)
-print(plass_entropies)
-print( "total class entropy", get_attribute_entropy(plass_entropies, total_passengers, pclass_yrate) )
+def print_entropy_data(yrate, total_records, entropy_name):
+	print()
+	print("***", entropy_name,"***")
+	entropy = get_value_entropies(yrate)
+	print(entropy)
+	print( "total", entropy_name, "entropy", get_attribute_entropy(entropy, total_records, yrate) )
+	print()
 
-age_entropies = get_value_entropies(Age_yrate)
-print(Age_yrate)
-print( "total age entropy", get_attribute_entropy(age_entropies, total_passengers, Age_yrate) )
+def print_root_data():
+	# class
+	print_entropy_data(pclass_yrate, total_passengers, "class")
 
-sex_entropies = get_value_entropies(Sex_yrate)
-print(sex_entropies)
-print( "total sex entropy", get_attribute_entropy(sex_entropies, total_passengers, Sex_yrate) )
+	# age
+	print_entropy_data(Age_yrate, total_passengers, "age")
 
-## male
+	# sex
+	print_entropy_data(Sex_yrate, total_passengers, "sex")
+
+def print_male_data():
+	# male-age
+	print_entropy_data(Male_age_yrate, total_males, "male-age")
+
+# print_root_data()
+print_male_data()
+
+
+
+
+
+
+
+
