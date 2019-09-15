@@ -58,6 +58,8 @@ def print_entropy_data(yrate, total_records, entropy_name):
 	print()
 
 def print_root_data():
+	print("### ROOT DATA ###")
+
 	# class
 	print_entropy_data(pclass_yrate, total_passengers, "class")
 
@@ -68,6 +70,8 @@ def print_root_data():
 	print_entropy_data(Sex_yrate, total_passengers, "sex")
 
 def print_male_data():
+	print("### MALE DATA ###")
+
 	# male-age
 	print_entropy_data(Male_age_yrate, total_males, "male-age")
 
