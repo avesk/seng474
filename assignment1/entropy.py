@@ -1,3 +1,12 @@
+''' 
+
+Description: This is a script which calculates entropy values based on data obtained from
+the titanic text file
+
+Authors: Avery Kushner, Matthew Smith 
+
+'''
+
 import math
 
 pclass_yrate = {
