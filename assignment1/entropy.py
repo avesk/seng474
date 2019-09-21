@@ -3,7 +3,7 @@
 Description: This is a script which calculates entropy values based on data obtained from
 the titanic text file
 
-Authors: Avery Kushner, Matthew Smith 
+Authors: Avery Kushner, Derek Siemens 
 
 '''
 
@@ -62,7 +62,7 @@ def get_attribute_entropy(entropies, total_records, yrates):
 	return entropy
 
 def entropy(yrate):
-	return -yrate*math.log(yrate) - (1-yrate)*math.log(1-yrate)
+	return (-1)*yrate*math.log(yrate, 2) - (1-yrate)*math.log(1-yrate, 2)
 
 def get_value_entropies(yrate):
 	entropies = {}
@@ -111,6 +111,8 @@ def print_female_data():
 print_root_data()
 print_male_data()
 print_female_data()
+
+# print(entropy(203/325))
 
 
 
