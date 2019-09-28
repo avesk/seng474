@@ -1,0 +1,8 @@
+#### Part 1
+Ran classifier on training data and training labels, tested on the same
+Reported Accuracy: 
+97.51552795031056%
+#### Part 2
+Ran classifier on test data and testing labels, tested on the same
+Reported Accuracy: 
+78.43137254901961%
